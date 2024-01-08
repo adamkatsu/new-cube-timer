@@ -1,0 +1,24 @@
+@use "../abstracts" as *;
+@use "../base" as *;
+
+header {
+    @include flex-box(row, space-between, center);
+    @include font-face($font-primary, 24px, $color-white, 500, 140%);
+    position: relative;
+    width: 100%;
+    z-index: 3;
+
+    .header-cont {
+        @include flex-box(row, space-between, center);
+        width: 100%;
+        padding: 1.5rem 2rem 1rem;
+
+        &-left {
+            @include flex-box(row, flex-start, center);
+            gap: 2.5rem;
+        }
+        &-right {
+            padding-right: 1rem;
+        }
+    }
+}

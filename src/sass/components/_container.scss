@@ -1,0 +1,19 @@
+@use "../abstracts" as *;
+@use "../base" as *;
+
+
+.cont-glass {
+    height: 100%;
+    border-radius: 32px;
+    background: rgba(0, 0, 0, 0.50);
+    box-shadow: -10px -10px 40px 0px rgba(0, 0, 0, 0.25);
+    padding: 2rem 1.5rem;
+}
+
+.side-cont {
+    min-width: 392px;
+}
+
+.cont-panel {
+    width: 100%;
+}

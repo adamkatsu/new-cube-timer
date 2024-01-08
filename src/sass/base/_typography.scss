@@ -1,0 +1,44 @@
+@use "../abstracts" as *;
+
+.header-logo {
+    @include font-face($font-primary, 24px, $color-white, 500, 140%);
+}
+.txt-version {
+    font-size: 12px;
+    font-weight: 400;
+}
+h2 {
+    @include font-face($font-primary, 2rem, $color-white, 500, 140%);
+}
+h3 {
+    @include font-face($font-primary, 1.5rem, $color-white, 500, 140%);
+    letter-spacing: -0.02em;
+    background: linear-gradient(97deg, #1A82E3 2.2%, #34C18F 20.28%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.txt-normal {
+    @include font-face($font-primary, 1rem, $color-white, 500, 140%); 
+    letter-spacing: -0.02em;
+}
+.cl-grey {
+    color: $color-grey-100;
+}
+.txt-panel {
+    &-left {
+        @include font-face($font-primary, 14px, $color-grey-100, 700, 140%);
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+    }
+    &-right {
+        @include font-face($font-primary, 20px, $color-white, 600, 140%);
+        letter-spacing: -0.02em;
+    }
+}
+.txt-scramble {
+    @include font-face($font-primary, 1.5rem, $color-white, 600, 140%);
+}
+.txt-timer {
+    @include font-face($font-primary, 15rem, $color-white, 500, 100%);
+}
