@@ -97,6 +97,7 @@ h2 {
   color: #f5f5f5;
   font-weight: 500;
   line-height: 140%;
+  padding-bottom: 0.5rem;
 }
 
 h3 {
@@ -183,6 +184,7 @@ header {
   position: relative;
   width: 100%;
   z-index: 3;
+  display: none !important;
 }
 header .header-cont {
   display: flex;
@@ -204,7 +206,7 @@ header .header-cont-right {
 }
 
 aside {
-  padding: 7.5rem 0 1.5rem;
+  padding: 1.5rem 0;
 }
 aside nav {
   display: flex;
@@ -219,6 +221,7 @@ aside nav .nav-menu {
   justify-content: flex-start;
   align-items: flex-start;
   gap: 2rem;
+  margin-top: -100px;
 }
 aside nav .nav-menu-item {
   padding: 12px;
@@ -269,6 +272,14 @@ aside nav .nav-footer-item:first-child img {
 
 .side-cont {
   min-width: 392px;
+  max-width: 392px;
+}
+.side-cont #cont-session {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: flex-start;
+  gap: 1.5rem;
 }
 .side-cont-head {
   padding-left: 1rem;
@@ -283,7 +294,52 @@ aside nav .nav-footer-item:first-child img {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  gap: 20px;
+  width: 100%;
+  min-width: 100%;
+  gap: 1.25rem;
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+  background-color: #021524;
+}
+.panel-head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.panel-times {
+  max-height: 180px;
+  overflow: scroll;
+}
+.panel-times-amount {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-top: 1rem;
+  border-top: 1px solid #383838;
+  width: 100%;
+}
+.panel-stats {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+.panel-stats-item {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #383838;
+}
+.panel-stats-item:last-child {
+  border: none;
 }
 
 .body-main {
@@ -291,13 +347,8 @@ aside nav .nav-footer-item:first-child img {
   flex-direction: row;
   justify-content: flex-start;
   align-items: stretch;
-  font-family: "Inter", sans-serif;
-  font-size: 24px;
-  color: #f5f5f5;
-  font-weight: 500;
-  line-height: 140%;
   gap: 1.5rem;
-  padding: 0px 1.5rem 1.5rem 1.5rem;
+  padding: 1.5rem;
   min-width: 100%;
   width: 100%;
   height: 100%;

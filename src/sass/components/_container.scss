@@ -12,6 +12,12 @@
 
 .side-cont {
     min-width: 392px;
+    max-width: 392px;
+
+    #cont-session {
+        @include flex-box(column, stretch, flex-start);
+        gap: 1.5rem;
+    }
 
     &-head {
         padding-left: 1rem;

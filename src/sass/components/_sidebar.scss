@@ -3,15 +3,17 @@
 
 
 aside {
-    padding: 7.5rem 0 1.5rem;
+    padding: 1.5rem 0;
 
     nav {
         @include flex-box(column, space-between, center);
         min-height: 100%;
+        
 
         .nav-menu {
             @include flex-box(column, flex-start, flex-start);
             gap: 2rem;
+            margin-top: -100px;
 
             &-item {
                 padding: 12px;

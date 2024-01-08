@@ -9,6 +9,7 @@
 }
 h2 {
     @include font-face($font-primary, 2rem, $color-white, 500, 140%);
+    padding-bottom: .5rem;
 }
 h3 {
     @include font-face($font-primary, 1.5rem, $color-white, 500, 140%);

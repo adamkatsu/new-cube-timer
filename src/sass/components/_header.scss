@@ -7,6 +7,7 @@ header {
     position: relative;
     width: 100%;
     z-index: 3;
+    display: none !important;   
 
     .header-cont {
         @include flex-box(row, space-between, center);

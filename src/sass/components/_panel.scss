@@ -3,8 +3,43 @@
 
 .panel {
     @include flex-box(column, flex-start, flex-start);
+    width: 100%;
+    min-width: 100%;
     gap: 1.25rem;
-    padding: 1.5rem !important;
-    border-radius: 1.5rem !important;
-    background-color: $color-white !important;
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+    background-color: $color-blue-dark;
+
+    &-head {
+        @include flex-box(row, space-between, center);
+        width: 100%;
+    }
+
+    &-times {
+        max-height: 180px;
+        overflow: scroll;
+    }
+
+    &-times-amount {
+        @include flex-box(row, space-between, flex-start);
+        padding-top: 1rem;
+        border-top: 1px solid $color-grey-200;
+        width: 100%;
+    }
+
+    &-stats {
+        width: 100%;
+        @include flex-box(column, flex-start, flex-start);
+        gap: .5rem;        
+
+        &-item {
+            width: 100%;
+            @include flex-box(row, space-between, flex-end);
+            padding-bottom: .5rem;
+            border-bottom: 1px solid $color-grey-200;
+        }
+        &-item:last-child {
+            border: none;
+        }
+    }
 }

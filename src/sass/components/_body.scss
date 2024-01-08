@@ -1,0 +1,21 @@
+@use "../abstracts" as *;
+@use "../base" as *;
+
+.body-main {
+    @include flex-box(row, flex-start, stretch);
+    gap: 1.5rem;
+    // padding: 0px 1.5rem 1.5rem 1.5rem;
+    padding: 1.5rem;
+    min-width: 100%;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 3;
+}
+
+main {
+    @include flex-box(row, flex-start, flex-start);
+    gap: 1rem;
+    width: 100%;
+    min-height: 100%;
+}
