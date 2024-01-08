@@ -345,7 +345,7 @@ aside nav .nav-footer-item:first-child img {
   width: 100%;
 }
 .panel-times {
-  max-height: 180px;
+  max-height: 120px;
   overflow: scroll;
 }
 .panel-times-amount {
