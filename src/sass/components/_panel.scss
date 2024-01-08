@@ -1,0 +1,10 @@
+@use "../abstracts" as *;
+@use "../base" as *;
+
+.panel {
+    @include flex-box(column, flex-start, flex-start);
+    gap: 1.25rem;
+    padding: 1.5rem !important;
+    border-radius: 1.5rem !important;
+    background-color: $color-white !important;
+}
