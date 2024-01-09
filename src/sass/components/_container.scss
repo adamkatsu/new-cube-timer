@@ -26,4 +26,6 @@
 
 .cont-panel {
     width: 100%;
+    @include flex-box(column, flex-start, center);
+    padding-top: 8%;
 }

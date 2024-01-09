@@ -148,7 +148,7 @@ h3 {
   font-family: "Inter", sans-serif;
   font-size: 1.5rem;
   color: #f5f5f5;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 140%;
 }
 
@@ -158,6 +158,18 @@ h3 {
   color: #f5f5f5;
   font-weight: 500;
   line-height: 100%;
+}
+
+.btn-main {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  color: #f5f5f5;
+  font-weight: 500;
+  line-height: 140%;
+  padding: 1rem 2rem;
+  border: 1px solid #DDDDDD;
+  border-radius: 2rem;
+  background-color: transparent;
 }
 
 .background-wrapper {
@@ -323,6 +335,11 @@ aside nav .nav-footer-item:first-child img {
 
 .cont-panel {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 8%;
 }
 
 .panel {
@@ -345,8 +362,23 @@ aside nav .nav-footer-item:first-child img {
   width: 100%;
 }
 .panel-times {
-  max-height: 120px;
+  max-height: 160px;
   overflow: scroll;
+}
+.panel-times::-webkit-scrollbar-track {
+  border: 1px solid transparent;
+  background-color: transparent;
+}
+.panel-times::-webkit-scrollbar {
+  width: 8px;
+  background-color: transparent;
+}
+.panel-times::-webkit-scrollbar-thumb {
+  background-color: rgba(100, 100, 100, 0.3);
+  border-radius: 1rem;
+}
+.panel-times::-webkit-scrollbar-corner {
+  background-color: transparent;
 }
 .panel-times-amount {
   display: flex;
@@ -400,4 +432,55 @@ main {
   gap: 1rem;
   width: 100%;
   min-height: 100%;
+}
+
+.timer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+}
+.timer-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.timer .scramble {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  max-width: 720px;
+  padding: 1rem 2rem;
+  gap: 0.5rem;
+  border-radius: 1rem;
+  background-color: #021524;
+  background-image: radial-gradient(circle at 100% 100%, transparent 15px, #34c18f 15px, #34c18f 16px, transparent 16px), linear-gradient(to right, #34c18f, #1c82e3), radial-gradient(circle at 0% 100%, transparent 15px, #1c82e3 15px, #1c82e3 16px, transparent 16px), linear-gradient(to bottom, #1c82e3, #34c18f), radial-gradient(circle at 0% 0%, transparent 15px, #34c18f 15px, #34c18f 16px, transparent 16px), linear-gradient(to left, #34c18f, #1c82e3), radial-gradient(circle at 100% 0%, transparent 15px, #1c82e3 15px, #1c82e3 16px, transparent 16px), linear-gradient(to top, #1c82e3, #34c18f);
+  background-size: 16px 16px, calc(100% - 32px) 1px, 16px 16px, 1px calc(100% - 32px);
+  background-position: top left, top center, top right, center right, bottom right, bottom center, bottom left, center left;
+  background-repeat: no-repeat;
+}
+.timer-stats {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.timer-stats-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+}
+.timer-button-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
 }

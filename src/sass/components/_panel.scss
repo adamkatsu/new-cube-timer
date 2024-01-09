@@ -16,9 +16,28 @@
     }
 
     &-times {
-        max-height: 120px;
+        max-height: 160px;
         overflow: scroll;
+
+        &::-webkit-scrollbar-track{
+            border: 1px solid transparent;
+            background-color: transparent;
+        }
+
+        &::-webkit-scrollbar{
+            width: 8px;
+            background-color: transparent;
+        }
+
+        &::-webkit-scrollbar-thumb{
+            background-color: rgba(100, 100, 100, 0.3);
+            border-radius: 1rem;
+        }
+        &::-webkit-scrollbar-corner {
+            background-color: transparent;
+        }
     }
+    
 
     &-times-amount {
         @include flex-box(row, space-between, flex-start);

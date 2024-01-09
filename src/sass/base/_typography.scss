@@ -38,7 +38,7 @@ h3 {
     }
 }
 .txt-scramble {
-    @include font-face($font-primary, 1.5rem, $color-white, 600, 140%);
+    @include font-face($font-primary, 1.5rem, $color-white, 500, 140%);
 }
 .txt-timer {
     @include font-face($font-primary, 15rem, $color-white, 500, 100%);

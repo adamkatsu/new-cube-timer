@@ -1,2 +1,37 @@
 @use "../abstracts" as *;
 @use "../base" as *;
+
+.timer {
+    @include flex-box(column, center, center);
+    gap: 5rem;
+
+    &-main {
+        @include flex-box(column, center, center);
+        gap: 2rem;
+    }
+    .scramble {
+        @include flex-box(row, center, center);
+        max-width: 720px;
+        padding: 1rem 2rem;
+        gap: .5rem;
+        border-radius: 1rem;
+        background-color: $color-blue-dark;
+        background-image: radial-gradient(circle at 100% 100%, transparent 15px, #34c18f 15px, #34c18f 16px, transparent 16px), linear-gradient(to right, #34c18f, #1c82e3), radial-gradient(circle at 0% 100%, transparent 15px, #1c82e3 15px, #1c82e3 16px, transparent 16px), linear-gradient(to bottom, #1c82e3, #34c18f), radial-gradient(circle at 0% 0%, transparent 15px, #34c18f 15px, #34c18f 16px, transparent 16px), linear-gradient(to left, #34c18f, #1c82e3), radial-gradient(circle at 100% 0%, transparent 15px, #1c82e3 15px, #1c82e3 16px, transparent 16px), linear-gradient(to top, #1c82e3, #34c18f);
+        background-size: 16px 16px, calc(100% - 32px) 1px, 16px 16px, 1px calc(100% - 32px);
+        background-position: top left,top center,top right,center right, bottom right,bottom center,bottom left,center left;
+        background-repeat: no-repeat;
+    }
+    &-stats {
+        @include flex-box(row, center, center);
+        gap: 1rem;
+
+        &-item {
+            @include flex-box(row, center, center);
+            gap: .25rem;
+        }
+    }
+    &-button-wrapper {
+        @include flex-box(row, center, center);
+        gap: 1.5rem;
+    }
+}

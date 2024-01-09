@@ -1,2 +1,10 @@
 @use "../abstracts" as *;
 @use "../base" as *;
+
+.btn-main {
+    @include font-face($font-primary, 1rem, $color-white, 500, 140%);
+    padding: 1rem 2rem;
+    border: 1px solid $color-whitesmoke;
+    border-radius: 2rem;
+    background-color: transparent;
+}
