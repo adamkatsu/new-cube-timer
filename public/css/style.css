@@ -1,5 +1,5 @@
 @import "https://unpkg.com/open-props";
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Mono&display=swap");
 *,
 *::before,
 *::after {
@@ -107,7 +107,7 @@ h3 {
   font-weight: 500;
   line-height: 140%;
   letter-spacing: -0.02em;
-  background: linear-gradient(97deg, #1A82E3 2.2%, #34C18F 20.28%);
+  background: linear-gradient(140deg, #1A82E3 15.2%, #34C18F 60.28%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -153,11 +153,12 @@ h3 {
 }
 
 .txt-timer {
-  font-family: "Inter", sans-serif;
-  font-size: 15rem;
+  font-family: "PT Mono", monospace;
+  font-size: 16rem;
   color: #f5f5f5;
   font-weight: 500;
   line-height: 100%;
+  letter-spacing: -0.08em;
 }
 
 .txt-warning {
@@ -167,6 +168,10 @@ h3 {
   font-weight: 500;
   line-height: 100%;
   text-align: center;
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 .btn-main {
@@ -343,14 +348,23 @@ aside nav .nav-footer-item:first-child img {
   background-color: transparent;
 }
 
-.side-cont {
+.side-cont-wrapper {
   min-width: 392px;
   width: 392px;
   max-width: 392px;
+  height: 100%;
+  position: relative;
+}
+
+.side-cont {
+  width: 100%;
   overflow: scroll;
+  position: absolute;
+  top: 0;
+  left: 0;
   transition: min-width 0.3s ease-in, width 0.3s ease-in, padding 0.3s ease-in;
 }
-.side-cont #cont-session {
+.side-cont .cont-inner {
   display: flex;
   flex-direction: column;
   justify-content: stretch;
@@ -491,6 +505,9 @@ main {
   bottom: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.9);
+}
+.breakpoint-warning span {
+  max-width: 1024px;
 }
 
 .timer {

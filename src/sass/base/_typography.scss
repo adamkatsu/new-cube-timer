@@ -14,7 +14,7 @@ h2 {
 h3 {
     @include font-face($font-primary, 1.5rem, $color-white, 500, 140%);
     letter-spacing: -0.02em;
-    background: linear-gradient(97deg, #1A82E3 2.2%, #34C18F 20.28%);
+    background: linear-gradient(140deg, #1A82E3 15.2%, #34C18F 60.28%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -41,7 +41,8 @@ h3 {
     @include font-face($font-primary, 1.5rem, $color-white, 500, 140%);
 }
 .txt-timer {
-    @include font-face($font-primary, 15rem, $color-white, 500, 100%);
+    @include font-face($font-timer, 16rem, $color-white, 500, 100%);
+    letter-spacing: -0.08em;
 }
 .txt-warning {
     @include font-face($font-primary, 5rem, $color-white, 500, 100%);
