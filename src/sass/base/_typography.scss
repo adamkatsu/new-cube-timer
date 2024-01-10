@@ -43,3 +43,7 @@ h3 {
 .txt-timer {
     @include font-face($font-primary, 15rem, $color-white, 500, 100%);
 }
+.txt-warning {
+    @include font-face($font-primary, 5rem, $color-white, 500, 100%);
+    text-align: center;
+}

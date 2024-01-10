@@ -20,6 +20,7 @@
         background-size: 16px 16px, calc(100% - 32px) 1px, 16px 16px, 1px calc(100% - 32px);
         background-position: top left,top center,top right,center right, bottom right,bottom center,bottom left,center left;
         background-repeat: no-repeat;
+        text-align: center;
     }
     &-stats {
         @include flex-box(row, center, center);

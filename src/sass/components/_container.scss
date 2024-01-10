@@ -8,11 +8,34 @@
     background: rgba(0, 0, 0, 0.50);
     box-shadow: -10px -10px 40px 0px rgba(0, 0, 0, 0.25);
     padding: 2rem 1.5rem;
+    overflow-x: hidden;
+
+    &::-webkit-scrollbar-track{
+        border: 1px solid transparent;
+        background-color: transparent;
+    }
+
+    &::-webkit-scrollbar{
+        width: 8px;
+        background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb{
+        background-color: rgba(100, 100, 100, 0.3);
+        border-radius: 1rem;
+    }
+    &::-webkit-scrollbar-corner {
+        background-color: transparent;
+    }
 }
 
 .side-cont {
     min-width: 392px;
+    width: 392px;
     max-width: 392px;
+    overflow: scroll;
+    // opacity: 1;
+    transition: min-width .3s ease-in, width .3s ease-in, padding .3s ease-in;
 
     #cont-session {
         @include flex-box(column, stretch, flex-start);
@@ -21,7 +44,17 @@
 
     &-head {
         padding-left: 1rem;
+        min-width: calc(288px + 48px);
+
     }
+}
+
+.cont-hide {
+    min-width: 0px;
+    width: 0px;
+    padding: 2rem 0px;
+    // opacity: 0;
+    transition: min-width .3s ease-in, width .3s ease-in, padding .3s ease-out;
 }
 
 .cont-panel {

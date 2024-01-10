@@ -4,11 +4,12 @@
 .panel {
     @include flex-box(column, flex-start, flex-start);
     width: 100%;
-    min-width: 100%;
+    min-width: calc(288px + 48px);
     gap: 1.25rem;
     padding: 1.5rem;
     border-radius: 1.5rem;
     background-color: $color-blue-dark;
+    
 
     &-head {
         @include flex-box(row, space-between, center);
