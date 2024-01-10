@@ -1,13 +1,17 @@
+
+// Tab Interaction
+
 const btnSession = document.querySelector('#current-session');
 const btnStats = document.querySelector('#statistics');
 const btnTable = document.querySelector('#all-session');
 const contSession = document.querySelector('#cont-session');
 const contStats = document.querySelector('#cont-stats');
 const contTable = document.querySelector('#cont-table');
+const contMain = document.querySelector('.side-cont-wrapper');
 const wrapperCont = document.querySelector('.body-main');
 
 btnSession.addEventListener('click', () => {
-    checkPanel();
+    // checkPanel();
 
     if(
         contStats.classList.contains('cont-hide') == false ||
@@ -24,7 +28,7 @@ btnSession.addEventListener('click', () => {
 
 });
 btnStats.addEventListener('click', () => {
-    checkPanel();
+    // checkPanel();
 
     if(
         contSession.classList.contains('cont-hide') == false ||
@@ -41,7 +45,7 @@ btnStats.addEventListener('click', () => {
 
 });
 btnTable.addEventListener('click', () => {
-    checkPanel();
+    // checkPanel();
 
     if(
         contSession.classList.contains('cont-hide') == false ||
@@ -68,6 +72,9 @@ const checkPanel = function() {
             wrapperCont.classList.add('panel-active');
         }
 }
+
+
+// Breakpoint Check
 
 const checkWindow = function() {
     let warningDisplay = document.querySelector(".breakpoint-warning");
