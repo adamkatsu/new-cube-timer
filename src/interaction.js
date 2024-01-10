@@ -11,58 +11,39 @@ const contMain = document.querySelector('.side-cont-wrapper');
 const wrapperCont = document.querySelector('.body-main');
 
 btnSession.addEventListener('click', () => {
+
     // checkPanel();
-
-    if(
-        contStats.classList.contains('cont-hide') == false ||
-        contTable.classList.contains('cont-hide') == false) {
-            setTimeout(() => {
-                contSession.classList.toggle('cont-hide');
-            }, "300");
-        } else {
-            contSession.classList.toggle('cont-hide');
-        }
-
-    contStats.classList.add('cont-hide');
-    contTable.classList.add('cont-hide');
+    checkCont(contSession, contStats, contTable);
 
 });
 btnStats.addEventListener('click', () => {
+
     // checkPanel();
-
-    if(
-        contSession.classList.contains('cont-hide') == false ||
-        contTable.classList.contains('cont-hide') == false) {
-            setTimeout(() => {
-                contStats.classList.toggle('cont-hide');
-            }, "300");
-        } else {
-            contStats.classList.toggle('cont-hide');
-        }
-
-    contSession.classList.add('cont-hide');
-    contTable.classList.add('cont-hide');
+    checkCont(contStats, contTable, contSession);
 
 });
 btnTable.addEventListener('click', () => {
+
     // checkPanel();
-
-    if(
-        contSession.classList.contains('cont-hide') == false ||
-        contStats.classList.contains('cont-hide') == false) {
-            setTimeout(() => {
-                contTable.classList.toggle('cont-hide');
-            }, "300");
-        } else {
-            contTable.classList.toggle('cont-hide');
-        }
-
-    contSession.classList.add('cont-hide');
-    contStats.classList.add('cont-hide');
-
+    checkCont(contTable, contSession, contStats);
 });
 
-const checkPanel = function() {
+function checkCont(current, hideOne, hideTwo) {
+    if(
+        hideOne.classList.contains('cont-hide') == false ||
+        hideTwo.classList.contains('cont-hide') == false) {
+            setTimeout(() => {
+                current.classList.toggle('cont-hide');
+            }, "300");
+        } else {
+            current.classList.toggle('cont-hide');
+        }
+
+    hideOne.classList.add('cont-hide');
+    hideTwo.classList.add('cont-hide');
+}
+
+function checkPanel() {
     if(
         contSession.classList.contains('cont-hide') &&
         contTable.classList.contains('cont-hide') &&
@@ -85,7 +66,6 @@ const checkWindow = function() {
         warningDisplay.style.display = 'flex';
     }
 }
-
 
 checkWindow();
  
