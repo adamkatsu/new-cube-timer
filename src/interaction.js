@@ -1,4 +1,3 @@
-
 // Tab Interaction
 
 const btnSession = document.querySelector('#current-session');
@@ -11,24 +10,26 @@ const contMain = document.querySelector('.side-cont-wrapper');
 const wrapperCont = document.querySelector('.body-main');
 
 btnSession.addEventListener('click', () => {
-
-    // checkPanel();
     checkCont(contSession, contStats, contTable);
-
+    setTimeout(() => {
+        checkPanel();
+    }, '300');
 });
 btnStats.addEventListener('click', () => {
-
-    // checkPanel();
     checkCont(contStats, contTable, contSession);
-
+    setTimeout(() => {
+        checkPanel();
+    }, '300');
 });
 btnTable.addEventListener('click', () => {
-
-    // checkPanel();
     checkCont(contTable, contSession, contStats);
+    setTimeout(() => {
+        checkPanel();
+    }, '300');
 });
 
 function checkCont(current, hideOne, hideTwo) {
+
     if(
         hideOne.classList.contains('cont-hide') == false ||
         hideTwo.classList.contains('cont-hide') == false) {
@@ -44,6 +45,7 @@ function checkCont(current, hideOne, hideTwo) {
 }
 
 function checkPanel() {
+    
     if(
         contSession.classList.contains('cont-hide') &&
         contTable.classList.contains('cont-hide') &&
@@ -52,6 +54,7 @@ function checkPanel() {
         } else {
             wrapperCont.classList.add('panel-active');
         }
+    
 }
 
 

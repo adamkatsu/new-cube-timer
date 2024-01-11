@@ -280,8 +280,8 @@ aside nav {
 aside nav .nav-menu {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
   gap: 2rem;
   margin-top: -100px;
 }
@@ -374,6 +374,10 @@ aside nav .nav-footer-item:first-child img {
 .side-cont-head {
   padding-left: 1rem;
   min-width: 336px;
+}
+
+.side-cont-wrapper {
+  transition: min-width 0.3s ease-in, width 0.3s ease-in, padding 0.3s ease-out;
 }
 
 .cont-hide {
@@ -472,12 +476,12 @@ aside nav .nav-footer-item:first-child img {
   height: 100%;
   position: relative;
   z-index: 3;
-  transition: gap 0.5s ease-out;
+  transition: gap 0.3s ease-out;
 }
 
 .panel-active {
   gap: 1rem;
-  transition: gap 0.5s ease-out;
+  transition: gap 0.3s ease-out;
 }
 
 main {

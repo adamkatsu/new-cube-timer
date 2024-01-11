@@ -8,10 +8,11 @@ aside {
     nav {
         @include flex-box(column, space-between, center);
         min-height: 100%;
+
         
 
         .nav-menu {
-            @include flex-box(column, flex-start, flex-start);
+            @include flex-box(column, center, center);
             gap: 2rem;
             margin-top: -100px;
 
