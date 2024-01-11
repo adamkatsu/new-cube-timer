@@ -4,11 +4,13 @@
 
 aside {
     padding: 1.5rem 0;
+    @include flex-box(column, flex-start, flex-start);
+    flex-shrink: 0;
 
     nav {
         @include flex-box(column, space-between, center);
         min-height: 100%;
-
+        flex-shrink: 0;
         
 
         .nav-menu {

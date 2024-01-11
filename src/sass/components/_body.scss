@@ -11,11 +11,11 @@
     height: 100%;
     position: relative;
     z-index: 3;
-    transition: gap .3s ease-out;
+    transition: gap .1s ease-out;
 }
 .panel-active {
     gap: 1rem;
-    transition: gap .3s ease-out;
+    transition: gap .1s ease-out;
 }
 
 main {

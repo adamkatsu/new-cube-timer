@@ -42,20 +42,25 @@ function checkCont(current, hideOne, hideTwo) {
 
     hideOne.classList.add('cont-hide');
     hideTwo.classList.add('cont-hide');
+
+    if(wrapperCont.classList.contains('panel-active') == false) {
+        wrapperCont.classList.add('panel-active');
+        contMain.classList.remove('cont-hide');
+    }
 }
 
 function checkPanel() {
-    
+
     if(
         contSession.classList.contains('cont-hide') &&
         contTable.classList.contains('cont-hide') &&
         contStats.classList.contains('cont-hide')) {
             wrapperCont.classList.remove('panel-active');
-        } else {
-            wrapperCont.classList.add('panel-active');
+            contMain.classList.add('cont-hide');
         }
     
 }
+
 
 
 // Breakpoint Check
