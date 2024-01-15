@@ -86,7 +86,7 @@
                             <div class="panel-head">
                                 <h3>Times</h3>
                             </div>
-                            <div class="panel-times">
+                            <div id="results" class="panel-times">
                                 <span class="txt-normal">12.34</span>
                                 <span class="txt-normal">12.34</span>
                                 <span class="txt-normal">12.34</span>
@@ -208,6 +208,9 @@
                     <div class="timer-main">
                         <div class="timer-stats">
                             <div class="timer-stats-item">
+                                <span class="txt-normal">Puzzle: 3x3</span>
+                            </div>
+                            <div class="timer-stats-item">
                                 <img src="assets/img/hash.svg" alt="">
                                 <span class="txt-normal">Countdown: On</span>
                             </div>
@@ -218,6 +221,7 @@
                         </div>
                         <span class="txt-timer" id="timer">12.34</span>
                         <div class="timer-button-wrapper">
+                            <button class="btn-main" id="btn-reset">Reset</button>
                             <button class="btn-main">Count</button>
                             <button class="btn-main">+2</button>
                             <button class="btn-main">DNF</button>
@@ -231,6 +235,7 @@
     </div>
 
     <script src="interaction.js"></script>
+    <script src="timer.js"></script>
     
 </body>
 </html>
