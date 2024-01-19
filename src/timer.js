@@ -18,19 +18,35 @@ function startTimer() {
       clearInterval(int);
       console.log(`timer stopped, time is = ${minutes}:${sec}.${secMinOne}${count}`);
   
+      class Time {
+
+        constructor(currentTime) {
+          this.time = currentTime;
+        }
+
+      }
+
       // Store Result in avglist array
       if (sec < 10) {
-        avgList.push(`${minutes}:0${sec}.${secMinOne}${count}`);
+        let currentTime = `${minutes}:0${sec}.${secMinOne}${count}`
+        let newTime = new Time(currentTime);
+        avgList.push(newTime);
       } else {
-        avgList.push(`${minutes}:${sec}.${secMinOne}${count}`);
+        let currentTime = `${minutes}:${sec}.${secMinOne}${count}`
+        let newTime = new Time(currentTime);
+        avgList.push(newTime);
       }
+
+      console.log(avgList);
+      
   
       // Save avgList in LocalStorage
-      localStorage.setItem('session', avgList);
+      let jsonString = JSON.stringify(avgList);
+      localStorage.setItem('session', jsonString);
       let avgStorage = localStorage.getItem('session');
-      let newList = avgStorage.split(','); // Temporary array to print new list.
+
   
-    //   printSolves(newList);
+      printSolves(avgStorage);
     //   newScramble(3);
     //   printAvg(avgList);
     //   console.log(typeof calculateAverageTime(avgList));
@@ -49,7 +65,7 @@ function startTimer() {
     }
   }
 
-  function addNum() {
+function addNum() {
     count += 1;
   
     // Check if under 1 minute
@@ -116,10 +132,32 @@ function startTimer() {
         }
       }
     }
-  }
+}
   
+function printSolves(x) {
 
-  // Event Listeners
+  timeList.innerHTML = ""; // Clear list to make room for new list
+
+  let newList = JSON.parse(x); // Temporary array to print new list.
+
+  // Show results, Loop through each array
+  for (const item of newList) {
+    const spanElement = document.createElement("span");
+    spanElement.classList.add('txt-normal');
+    spanElement.textContent = `${item.time}`;
+    timeList.appendChild(spanElement);
+    timeList.appendChild(document.createTextNode(", "));
+  }
+
+  timeList.removeChild(timeList.lastChild); // Remove the coma from last array
+
+  document.getElementById('results-count').innerHTML = `${newList.length}`;
+
+}
+
+
+
+// Event Listeners
 
 // Space key to start timer
 window.addEventListener("keyup", (event) => {
