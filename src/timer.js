@@ -8,6 +8,21 @@ let secMinOne = 0;
 let int = null;
 let avgList = [];
 
+// Get localStorage when page load
+let avgStorage = localStorage.getItem('session');
+
+
+
+// Check if session exist
+if(avgStorage === null) {
+  // If not exist, let it be
+  avgList = [];
+} else {
+  // If exist, turn avgStorage [string] to avgList [array], show in list of solves in HTML
+  avgList = avgStorage.split(',');
+  printSolves(avgList);
+}
+
 
 function startTimer() {
     // Disable reset button focus
