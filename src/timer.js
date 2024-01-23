@@ -11,16 +11,15 @@ let avgList = [];
 // Get localStorage when page load
 let avgStorage = localStorage.getItem('session');
 
-
-
 // Check if session exist
 if(avgStorage === null) {
   // If not exist, let it be
+  console.log('session not exist')
   avgList = [];
 } else {
   // If exist, turn avgStorage [string] to avgList [array], show in list of solves in HTML
-  avgList = avgStorage.split(',');
-  printSolves(avgList);
+  avgList = JSON.parse(avgStorage)
+  printSolves(avgStorage);
 }
 
 
@@ -58,7 +57,7 @@ function startTimer() {
       // Save avgList in LocalStorage
       let jsonString = JSON.stringify(avgList);
       localStorage.setItem('session', jsonString);
-      let avgStorage = localStorage.getItem('session');
+      // let avgStorage = localStorage.getItem('session');
 
   
       printSolves(avgStorage);
