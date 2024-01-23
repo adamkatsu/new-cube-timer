@@ -412,7 +412,9 @@ aside nav .nav-footer-item:first-child img {
   gap: 1.25rem;
   padding: 1.5rem;
   border-radius: 1.5rem;
+  overflow: hidden;
   background-color: #021524;
+  height: 100%;
 }
 .panel-head {
   display: flex;
@@ -468,6 +470,10 @@ aside nav .nav-footer-item:first-child img {
 }
 .panel-stats-item:last-child {
   border: none;
+}
+.panel-hide {
+  height: 80px;
+  height: all 0.5s ease;
 }
 
 .body-main {

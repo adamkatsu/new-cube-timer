@@ -87,6 +87,11 @@ function checkPanel() {
 }
 
 
+const panelToggle = document.getElementById('panel-session');
+panelToggle.querySelector('.panel-head').addEventListener('click', () => {
+    panelToggle.classList.toggle('panel-hide');
+})
+
 // Breakpoint Check
 
 const checkWindow = function() {

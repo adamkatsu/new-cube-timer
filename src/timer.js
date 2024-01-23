@@ -47,7 +47,7 @@ function startTimer() {
 
   
       printSolves(avgStorage);
-    //   newScramble(3);
+      newScramble(3);
     //   printAvg(avgList);
     //   console.log(typeof calculateAverageTime(avgList));
   
@@ -154,6 +154,57 @@ function printSolves(x) {
   document.getElementById('results-count').innerHTML = `${newList.length}`;
 
 }
+
+// SCRAMBLE
+let scrambleArgs = [
+  [
+    [`L`,`L'`,`L2`,`Lw`,`Lw'`,`Lw2`],
+    [`R`,`R'`,`R2`,`Rw`,`Rw'`,`Rw2`]
+  ],
+  [
+    [`U`,`U'`,`U2`,`Uw`,`Uw'`,`Uw2`],
+    [`D`,`D'`,`D2`,`Dw`,`Dw'`,`Dw2`]
+  ],
+  [
+    [`F`,`F'`,`F2`,`Fw`,`Fw'`,`Fw2`],
+    [`B`,`B'`,`B2`,`Bw`,`Bw'`,`Bw2`]
+  ]
+]
+
+function newScramble(dim) {
+  let scrambleArr = []
+  let scrambleCount = 0;
+
+  // Print Scramble 21 times
+  while(scrambleCount < 21) {
+    let dims = Math.floor(Math.random() * 3)
+    let side = Math.floor(Math.random() * 2);
+    let turn = Math.floor(Math.random() * dim);
+    let argPush = false;
+
+    // Check if latest args is contained in any 2 args before
+    // Also check if there is consecutive args
+
+    const condOne = scrambleArgs[dims][side].includes(scrambleArr[scrambleArr.length -1])
+    const condTwo = scrambleArgs[dims][side].includes(scrambleArr[scrambleArr.length -2])
+
+    if(condOne) {
+      // console.log(`(R)  ${scrambleArgs[dims][side][turn]}, ${scrambleArr[scrambleArr.length -1]}, ${scrambleArr[scrambleArr.length -2]}`)
+    } else if(condTwo) {
+      // console.log(`(R)  ${scrambleArgs[dims][side][turn]}, ${scrambleArr[scrambleArr.length -1]}, ${scrambleArr[scrambleArr.length -2]}`)
+    }else {
+      argPush = true
+    }
+
+    if(argPush) {
+      // console.log(`(${scrambleCount})  ${scrambleArgs[dims][side][turn]}, ${scrambleArr[scrambleArr.length -1]}, ${scrambleArr[scrambleArr.length -2]}`)
+      scrambleArr.push(scrambleArgs[dims][side][turn]);
+      document.getElementById('scramble').innerHTML = `${scrambleArr.join(' ')}`
+      scrambleCount++
+    }
+  }
+}
+newScramble(3);
 
 
 

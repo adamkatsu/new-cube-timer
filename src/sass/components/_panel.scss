@@ -8,7 +8,10 @@
     gap: 1.25rem;
     padding: 1.5rem;
     border-radius: 1.5rem;
+    overflow: hidden;
     background-color: $color-blue-dark;
+    height: 100%;
+    // transition: all .5s ease;
     
 
     &-head {
@@ -61,5 +64,10 @@
         &-item:last-child {
             border: none;
         }
+    }
+
+    &-hide {
+        height: 80px;
+        height: all .5s ease;
     }
 }
