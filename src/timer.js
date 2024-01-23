@@ -8,76 +8,81 @@ let secMinOne = 0;
 let int = null;
 let avgList = [];
 
-// Get localStorage when page load
-let avgStorage = localStorage.getItem('session');
 
-// Check if session exist
-if(avgStorage === null) {
-  // If not exist, let it be
-  console.log('session not exist')
-  avgList = [];
-} else {
-  // If exist, turn avgStorage [string] to avgList [array], show in list of solves in HTML
-  avgList = JSON.parse(avgStorage)
-  printSolves(avgStorage);
+
+
+
+pageLoad();
+
+
+
+function pageLoad() {
+  // Get localStorage when page load
+  let avgStorage = localStorage.getItem('session');
+
+  // Check if session exist
+  if(avgStorage === null) {
+    // If not exist, let it be
+    console.log('session not exist')
+    avgList = [];
+  } else {
+    // If exist, turn avgStorage [string] to avgList [array], show in list of solves in HTML
+    avgList = JSON.parse(avgStorage)
+    printSolves(avgStorage);
+  }
 }
 
-
 function startTimer() {
-    // Disable reset button focus
-    btnReset.blur();
-  
-    if (int !== null) {
-      // If Timer is Running, STOP.
-      clearInterval(int);
-      console.log(`timer stopped, time is = ${minutes}:${sec}.${secMinOne}${count}`);
-  
-      class Time {
+  // Disable reset button focus
+  btnReset.blur();
 
-        constructor(currentTime) {
-          this.time = currentTime;
-        }
+  if (int !== null) {
+    // If Timer is Running, STOP.
+    clearInterval(int);
+    console.log(`timer stopped, time is = ${minutes}:${sec}.${secMinOne}${count}`);
 
+    class Time {
+      constructor(currentTime) {
+        this.time = currentTime;
       }
-
-      // Store Result in avglist array
-      if (sec < 10) {
-        let currentTime = `${minutes}:0${sec}.${secMinOne}${count}`
-        let newTime = new Time(currentTime);
-        avgList.push(newTime);
-      } else {
-        let currentTime = `${minutes}:${sec}.${secMinOne}${count}`
-        let newTime = new Time(currentTime);
-        avgList.push(newTime);
-      }
-
-      console.log(avgList);
-      
-  
-      // Save avgList in LocalStorage
-      let jsonString = JSON.stringify(avgList);
-      localStorage.setItem('session', jsonString);
-      // let avgStorage = localStorage.getItem('session');
-
-  
-      printSolves(avgStorage);
-      newScramble(3);
-    //   printAvg(avgList);
-    //   console.log(typeof calculateAverageTime(avgList));
-  
-      // Reset Timer 
-      count = 0;
-      sec = 0;
-      secMinOne = 0;
-      minutes = 0;
-      int = null;
-  
-    } else {
-      // If timer is not running, START.
-      int = setInterval(addNum, 10);
-      console.log(`timer started`);
     }
+    // Store Result in avglist array
+    if (sec < 10) {
+      let currentTime = `${minutes}:0${sec}.${secMinOne}${count}`
+      let newTime = new Time(currentTime);
+      avgList.push(newTime);
+    } else {
+      let currentTime = `${minutes}:${sec}.${secMinOne}${count}`
+      let newTime = new Time(currentTime);
+      avgList.push(newTime);
+    }
+    console.log(avgList);
+    
+
+    // Save avgList in LocalStorage
+    let jsonString = JSON.stringify(avgList);
+    localStorage.setItem('session', jsonString);
+    let avgStorage = localStorage.getItem('session');
+
+
+    printSolves(avgStorage);
+    newScramble(3);
+  //   printAvg(avgList);
+  //   console.log(typeof calculateAverageTime(avgList));
+
+    // Reset Timer 
+    count = 0;
+    sec = 0;
+    secMinOne = 0;
+    minutes = 0;
+    int = null;
+
+  } else {
+    // If timer is not running, START.
+    int = setInterval(addNum, 10);
+    console.log(`timer started`);
   }
+}
 
 function addNum() {
     count += 1;
@@ -149,7 +154,6 @@ function addNum() {
 }
   
 function printSolves(x) {
-
   timeList.innerHTML = ""; // Clear list to make room for new list
 
   let newList = JSON.parse(x); // Temporary array to print new list.
@@ -228,8 +232,8 @@ newScramble(3);
 
 // Space key to start timer
 window.addEventListener("keyup", (event) => {
-    if (event.code === "Space") {
-    //   document.getElementById("app-timer").classList.toggle("timer-on");
-      startTimer();
-    }
-  });
+  if (event.code === "Space") {
+  //   document.getElementById("app-timer").classList.toggle("timer-on");
+    startTimer();
+  }
+});
